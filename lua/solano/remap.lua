@@ -15,8 +15,22 @@ end)
 vim.keymap.set("n", "<leader>svwm", function()
     require("vim-with-me").StopVimWithMe()
 end)
+vim.keymap.set("n", "<leader>q", "\"0p")
+
+--latex specific
+vim.keymap.set("n", "<leader>li", "i\\begin{itemize}<CR>\\end{itemize}<ESC>O<TAB>\\item")
+vim.keymap.set("n", "<leader>ls", "i\\section*{}<ESC>i")
+vim.keymap.set("n", "<leader>lb", "i\\subsection*{}<ESC>i")
+vim.keymap.set("n", "<leader>lt", "i\\begin{tcolorbox}<CR>\\centering<CR>\\end{tcolorbox}<ESC>O")
+vim.keymap.set("i", "<C-l>", "\\item ")
+vim.keymap.set("i", "<C-s>", "\\subitem ")
+vim.keymap.set("i", "<C-d>", "<ESC>diWi")
+vim.keymap.set("i", "<C-b>", "\\textbf{")
+-- dd a\item  k 
+-- 
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", [["_dP]])
+-- afdsfadfsadfs
 -- next greatest remap ever : asbjornHaland
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
@@ -25,6 +39,8 @@ vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 -- This is going to get me cancelled
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+vim.keymap.set("n", "<C-m>", "<cmd>Copilot disable<CR>")
+vim.keymap.set("n", "<C-c>", "<cmd>Copilot enable<CR>")
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
